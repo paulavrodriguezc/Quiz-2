@@ -53,7 +53,7 @@ def print_fridge(products_updated: list):
         try:
             if product.inc_congelador:
                 print(f"La nevera de código {product.codigo_producto}: ")
-                print(f"\t Tiene congelador: {product.inc_congelador}")
+                print(f"\t Tiene congelador: {product.inc_congelador}\n")
         except:
             pass
 def main():
@@ -83,10 +83,10 @@ def main():
         {"cod_p": "XAT-221230", "price": 17.99, "brand": "Philips", "color": "Blanco", "cup": "Plastico", "speeds": 2}
     ]
 }
+    read_edd(edd, products_updated, products_codes)
     while continuing:
         option=greet_and_menu()
         if option==1:
-            read_edd(edd, products_updated, products_codes)
             print_products_available(products_updated)
             fridges_available=input("¿Desea SÓLO ver las neveras disponibles y si tienen congelador? \n1. Sí \n2. No \n---> ")
             while not fridges_available.isnumeric() or not fridges_available in ["1","2"]:
